@@ -23,3 +23,8 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
+
+remote_file '/usr/bin/current' do
+  source 'https://s3-us-west-2.amazonaws.com/assets.current.sh/current-linux-amd64'
+  mode '0755'
+end

@@ -36,5 +36,9 @@ describe 'current::install' do
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
     end
+
+    it 'creates a remote_file' do
+      expect(chef_run).to create_remote_file('/usr/bin/current')
+    end
   end
 end
