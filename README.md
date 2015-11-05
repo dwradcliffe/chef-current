@@ -1,4 +1,42 @@
 # current
 
-TODO: Enter the cookbook description here.
+Installs the [current](http://current.sh/) binary and provides a LWRP for sending log files to current.
 
+## Recipes
+
+* `default` - Nothing
+* `install` - Installs the binary
+
+## Attributes
+
+* `node['current']['token']` - Default token to use for services. Optional.
+
+## LWRPs
+
+### `current_send`
+
+Setup a runit service to send a log file to current.
+
+Example:
+
+```
+current_send 'some-app' do
+  filename '/var/log/some-app/asdf.log'
+  token 'asdfasdfasdfasdfasdf'
+end
+```
+
+If you have the token set in an attribute, you can leave it off the resource:
+
+```
+current_send 'some-other-app' do
+  filename '/var/log/some-other-app/asdf.log'
+end
+```
+
+
+## License and Author
+
+License: [MIT](https://github.com/dwradcliffe/chef-curret/blob/master/LICENSE)
+
+Author: [David Radcliffe](https://github.com/dwradcliffe)

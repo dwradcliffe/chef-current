@@ -4,11 +4,16 @@ maintainer_email 'radcliffe.david@gmail.com'
 license 'MIT'
 description 'Installs/Configures current'
 long_description 'Installs current cli and configures current send services'
-version '0.1.0'
+version '0.2.0'
 
 recipe 'current', 'NOOP'
 recipe 'current::install', 'Installs current binary'
 
+supports 'amazon'
+supports 'centos'
+supports 'debian'
+supports 'redhat'
+supports 'scientific'
 supports 'ubuntu'
 
 depends 'runit'
