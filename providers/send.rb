@@ -17,6 +17,7 @@ private
 def _runit_service
   include_recipe 'runit'
   opts = {
+    name: @new_resource.name,
     user: @new_resource.user,
     token: @new_resource.token,
     filename: @new_resource.filename
