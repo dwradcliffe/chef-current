@@ -21,4 +21,5 @@ node.default['current']['token'] = 'token-set-from-attribute'
 
 current_send 'some-other-app' do
   filename '/var/log/some-other-app/asdf.log'
+  tags ['rails']
 end

@@ -34,6 +34,7 @@ current_send 'some-other-app' do
 end
 ```
 
+You can also set an array of tags to send to current.
 
 ## License and Author
 

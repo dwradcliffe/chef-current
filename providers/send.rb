@@ -20,7 +20,8 @@ def _runit_service
     name: @new_resource.name,
     user: @new_resource.user,
     token: @new_resource.token,
-    filename: @new_resource.filename
+    filename: @new_resource.filename,
+    tags: @new_resource.tags.map {|t| "--tag #{t}" }.join(' ')
   }
   action = @new_resource.action
   runit_service "current_send_#{@new_resource.name}" do
