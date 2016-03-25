@@ -29,7 +29,7 @@ require 'spec_helper'
 describe 'current::install' do
   context 'When all attributes are default, on an unspecified platform' do
     let(:chef_run) do
-      runner = ChefSpec::ServerRunner.new
+      runner = ChefSpec::ServerRunner.new(platform: 'ubuntu', version: '14.04')
       runner.converge(described_recipe)
     end
 
@@ -37,8 +37,8 @@ describe 'current::install' do
       expect { chef_run }.to_not raise_error
     end
 
-    it 'creates a remote_file' do
-      expect(chef_run).to create_remote_file('/usr/bin/current')
+    it 'installs package' do
+      expect(chef_run).to install_dpkg_package('current')
     end
   end
 end

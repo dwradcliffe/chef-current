@@ -1,11 +1,11 @@
 # current
 
-Installs the [current](http://current.sh/) binary and provides a LWRP for sending log files to current.
+Installs the [current](http://current.sh/) package and provides a LWRP for sending log files to current.
 
 ## Recipes
 
 * `default` - Nothing
-* `install` - Installs the binary
+* `install` - Installs the package
 
 ## Attributes
 

@@ -24,7 +24,14 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-remote_file '/usr/bin/current' do
-  source 'https://s3-us-west-2.amazonaws.com/assets.current.sh/current-linux-amd64'
-  mode '0755'
+package_source_file = "#{Chef::Config[:file_cache_path]}/current-0.12.0-linux-amd64.deb"
+
+remote_file package_source_file do
+  source "https://bin.equinox.io/a/eyuWJHTHqit/current-0.12.0-linux-amd64.deb"
+  action :create_if_missing
+  mode 00644
+end
+
+dpkg_package 'current' do
+  source package_source_file
 end

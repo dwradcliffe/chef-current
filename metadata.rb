@@ -7,13 +7,13 @@ long_description 'Installs current cli and configures current send services'
 version '0.3.0'
 
 recipe 'current', 'NOOP'
-recipe 'current::install', 'Installs current binary'
+recipe 'current::install', 'Installs current package'
 
-supports 'amazon'
-supports 'centos'
+# supports 'amazon'
+# supports 'centos'
 supports 'debian'
-supports 'redhat'
-supports 'scientific'
+# supports 'redhat'
+# supports 'scientific'
 supports 'ubuntu'
 
 depends 'runit'
